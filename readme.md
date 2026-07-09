@@ -1,73 +1,334 @@
-🔗 URL Shortener
+# 🔗 URL Shortener
 
-A simple URL Shortener web application built using Python, Flask, and MySQL. This project converts long URLs into short URLs and redirects users to the original website. It also tracks how many times each short URL has been accessed.
+A simple and efficient **URL Shortener** web application built using **Python, Flask, and MySQL**. This application converts long URLs into short, unique links, redirects users to the original website, prevents duplicate entries, and tracks the number of times each shortened URL has been accessed.
 
-🚀 Features
+---
 
-- Convert long URLs into short URLs
-- Redirect users to the original website
-- Prevent duplicate URLs
-- Track click count
-- Store URL data in MySQL
-- Simple and responsive user interface
+## 🚀 Features
 
-🛠️ Technologies Used
+- 🔗 Convert long URLs into short URLs
+- ♻️ Prevent duplicate URL generation
+- 🌐 Redirect shortened URLs to the original website
+- 📊 Track click count for every shortened URL
+- 💾 Store URL mappings in MySQL
+- 🎨 Clean and responsive user interface
+- 🔒 Generate unique URLs using SHA-256 and Base64
 
-- Python
-- Flask
-- MySQL
-- HTML
-- CSS
-- SHA-256
-- Base64
-- python-dotenv
+---
 
-📂 Database
+## 🛠️ Tech Stack
 
-Database Name: "url_shortener"
+| Technology | Purpose |
+|------------|---------|
+| Python | Backend Logic |
+| Flask | Web Framework |
+| MySQL | Database |
+| HTML5 | Structure |
+| CSS3 | Styling |
+| SHA-256 | URL Hashing |
+| Base64 | Short URL Encoding |
+| python-dotenv | Environment Variables |
 
-Table Name: "url_mapping"
+---
 
-Column| Description
-id| Unique ID
-long_url| Original URL
-short_url| Generated short URL
-clicks| Number of times the short URL was opened
-created_at| Date and time the URL was created
+## 📂 Project Structure
 
-📌 Project Workflow
+```text
+URL-Shortener/
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   └── index.html
+│
+├── screenshots/
+│   ├── home-page.png
+│   ├── enter-url.png
+│   ├── generated-url.png
+│   ├── redirect.png
+│   └── database.png
+│
+├── .env
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
-1. User enters a long URL.
-2. Flask receives the request.
-3. Python checks whether the URL already exists.
-4. If it exists, the existing short URL is returned.
-5. Otherwise, a new short URL is generated using SHA-256 and Base64.
-6. The URL is stored in the MySQL database.
-7. The short URL is displayed.
-8. When the short URL is opened, the click count is updated and the user is redirected to the original URL.
+---
 
-▶️ How to Run
+## 🗄️ Database
 
-1. Clone the repository.
-2. Create and activate a virtual environment.
-3. Install the required packages:
-   - Flask
-   - mysql-connector-python
-   - python-dotenv
-4. Create the MySQL database and table.
-5. Add your MySQL password to the ".env" file.
-6. Run:
+### Database Name
 
+```text
+url_shortener
+```
+
+### Table Name
+
+```text
+url_mapping
+```
+
+### Table Structure
+
+| Column | Description |
+|---------|-------------|
+| id | Unique ID |
+| long_url | Original URL |
+| short_url | Generated Short URL |
+| clicks | Number of Visits |
+| created_at | URL Creation Time |
+
+---
+
+## ⚙️ Project Workflow
+
+### Step 1
+
+User enters a long URL.
+
+↓
+
+### Step 2
+
+Flask receives the request.
+
+↓
+
+### Step 3
+
+The application checks whether the URL already exists in the database.
+
+↓
+
+### Step 4
+
+If the URL already exists, the previously generated short URL is returned.
+
+↓
+
+### Step 5
+
+Otherwise, a new short URL is generated using SHA-256 hashing and Base64 encoding.
+
+↓
+
+### Step 6
+
+The generated URL mapping is stored in the MySQL database.
+
+↓
+
+### Step 7
+
+The shortened URL is displayed to the user.
+
+↓
+
+### Step 8
+
+When the shortened URL is opened:
+
+- Click count increases by 1
+- User is redirected to the original website
+
+---
+
+# 📸 Project Screenshots
+
+## 🏠 Home Page
+
+The application's landing page where users can paste their long URL.
+
+![Home Page](screenshots/home-page.png)
+
+---
+
+## ✍️ Enter Long URL
+
+Users enter a valid long URL before generating a shortened link.
+
+![Enter URL](screenshots/enter-url.png)
+
+---
+
+## 🔗 Short URL Generated
+
+The application generates a unique shortened URL that can be shared and accessed.
+
+![Generated URL](screenshots/generated-url.png)
+
+---
+
+## 🌐 Redirect to Original Website
+
+Opening the shortened URL automatically redirects users to the original website.
+
+![Redirect](screenshots/redirect.png)
+
+---
+
+## 🗄️ MySQL Database Records
+
+All generated URLs along with their click counts and timestamps are stored securely in the MySQL database.
+
+![Database](screenshots/database.png)
+
+---
+
+## 📊 Database Information
+
+| Field | Description |
+|-------|-------------|
+| Original URL | Stores the complete URL |
+| Short URL | Stores generated short code |
+| Click Count | Tracks total visits |
+| Created At | Timestamp of creation |
+
+---
+
+## ▶️ Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/url-shortener.git
+```
+
+---
+
+### Navigate to the Project
+
+```bash
+cd url-shortener
+```
+
+---
+
+### Create Virtual Environment
+
+Windows
+
+```bash
+python -m venv venv
+```
+
+Activate
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / Mac
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install Flask
+pip install mysql-connector-python
+pip install python-dotenv
+```
+
+or
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Create MySQL Database
+
+```sql
+CREATE DATABASE url_shortener;
+```
+
+---
+
+### Create Table
+
+```sql
+CREATE TABLE url_mapping (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    long_url TEXT NOT NULL,
+    short_url VARCHAR(20) UNIQUE,
+    clicks INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+### Configure Environment Variables
+
+Create a `.env` file.
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=url_shortener
+```
+
+---
+
+### Run the Application
+
+```bash
 python app.py
+```
 
-7. Open your browser and visit:
+---
 
+Open your browser:
+
+```
 http://127.0.0.1:5000/
+```
 
-📸 Output
+---
 
-- Generate a short URL from a long URL.
-- Redirect to the original website.
-- Track the number of clicks for each short URL.
+## 📈 Future Enhancements
 
+- User Authentication
+- QR Code Generation
+- URL Analytics Dashboard
+- Custom Short URLs
+- Expiry Date for URLs
+- Copy to Clipboard Button
+- REST API Support
 
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+Feel free to fork this repository and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is developed for educational and learning purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Shaik Fahad Jahangir**
+
+GitHub:
+https://github.com/Fahad7177-jeh
+
+LinkedIn:
+https://www.linkedin.com/in/your-linkedin-profile
