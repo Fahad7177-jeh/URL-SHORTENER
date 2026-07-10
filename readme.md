@@ -142,7 +142,8 @@ When the shortened URL is opened:
 
 The application's landing page where users can paste their long URL.
 
-![Home Page](screenshots/home-page.png)
+<img width="684" height="363" alt="image" src="https://github.com/user-attachments/assets/44dfcc2b-4f05-423c-8511-c4daf199a20e" />
+
 
 ---
 
@@ -150,7 +151,8 @@ The application's landing page where users can paste their long URL.
 
 Users enter a valid long URL before generating a shortened link.
 
-![Enter URL](screenshots/enter-url.png)
+<img width="697" height="386" alt="image" src="https://github.com/user-attachments/assets/53420bd7-7b7e-492b-8347-3f6577cd7085" />
+
 
 ---
 
@@ -158,7 +160,8 @@ Users enter a valid long URL before generating a shortened link.
 
 The application generates a unique shortened URL that can be shared and accessed.
 
-![Generated URL](screenshots/generated-url.png)
+<img width="735" height="374" alt="image" src="https://github.com/user-attachments/assets/f34bac83-8ca8-4ff0-a1f1-2a0add11e47c" />
+
 
 ---
 
@@ -166,7 +169,8 @@ The application generates a unique shortened URL that can be shared and accessed
 
 Opening the shortened URL automatically redirects users to the original website.
 
-![Redirect](screenshots/redirect.png)
+<img width="698" height="344" alt="image" src="https://github.com/user-attachments/assets/c650b4a5-0706-4393-978e-9690615ae95d" />
+
 
 ---
 
@@ -174,7 +178,8 @@ Opening the shortened URL automatically redirects users to the original website.
 
 All generated URLs along with their click counts and timestamps are stored securely in the MySQL database.
 
-![Database](screenshots/database.png)
+<img width="807" height="371" alt="image" src="https://github.com/user-attachments/assets/bf87b27d-91a2-465a-b31b-89b9dcf73af1" />
+
 
 ---
 
