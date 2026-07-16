@@ -1,6 +1,6 @@
 # 🔗 URL Shortener
 
-A simple and efficient **URL Shortener** web application built using **Python, Flask, and MySQL**. This application converts long URLs into short, unique links, redirects users to the original website, prevents duplicate entries, and tracks the number of times each shortened URL has been accessed.
+A simple and efficient **URL Shortener** web application built using **Python, Flask, and MySQL**. This application converts long URLs into short, unique links, redirects users to the original website, prevents duplicate entries, and tracks the number of times each shortened URL has been accessed
 
 ---
 
